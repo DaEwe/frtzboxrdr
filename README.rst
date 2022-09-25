@@ -27,9 +27,11 @@ Usage in code
 
 .. code-block:: python
 
+    from frtzboxrdr import Monitor
+
     m = Monitor(user, password)
-    m.on_device_connected(lambda mac: _logger.info(f" Device {mac} connected!"))
-    m.on_device_disconnected(lambda mac: _logger.info(f" Device {mac} disconnected!"))
+    m.on_device_connected(lambda mac: print(f" Device {mac} connected!"))
+    m.on_device_disconnected(lambda mac: print(f" Device {mac} disconnected!"))
     m.run_forever(5)
 
 
